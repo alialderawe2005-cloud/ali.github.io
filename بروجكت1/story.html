@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>القصة</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">⬅ رجوع للرئيسية</a>
+</header>
+
+<article class="story">
+  <h2 id="storyTitle"></h2>
+  <h4 id="storyAuthorDate"></h4>
+  <p id="storyContent"></p>
+</article>
+
+<script>
+  const story = JSON.parse(localStorage.getItem("currentStory"));
+
+  if (story) {
+    document.getElementById("storyTitle").innerText = story.title;
+    document.getElementById("storyAuthorDate").innerText = `✍ ${story.author} | 📅 ${story.date}`;
+    document.getElementById("storyContent").innerText = story.content;
+  }
+</script>
+
+</body>
+</html>
